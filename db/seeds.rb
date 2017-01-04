@@ -9,3 +9,12 @@ Card.create(title: 'Wichtigster Use Case', description: 'definiere den wichtigst
 
 b2 = Board.create(title: 'Weihnachten')
 Card.create(title: 'Geschenk für Mama', description: 'Recherche notwendig!', status: 'backlog', board_id: b2.id)
+
+User.create( 
+  'email'=>'mariam@example.com',
+  'encrypted_password'=>'$2a$11$A96YwRAthucAforsbbyeIeTLoNCdm5HJFLKjrvLRWxxXLAhfAtSOu',
+  'confirmed_at'=>Date.today,
+  'failed_attempts'=>0,
+  'unlock_token'=>nil,
+  'locked_at'=>nil
+)

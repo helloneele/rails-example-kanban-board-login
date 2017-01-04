@@ -57,6 +57,9 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "kanban_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
+  # devise needs proper e-mail settings
+  config.action_mailer.default_url_options = { host: 'kanban-3.herokuapp.com', protocol: 'https' }
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
