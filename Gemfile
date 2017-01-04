@@ -31,6 +31,9 @@ gem 'jbuilder', '~> 2.5'
 # use devise for managing user account
 gem 'devise'
 
+# the demo app should not really send mail, instead show the mails on the web page
+gem "letter_opener"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
