@@ -18,7 +18,13 @@
         Kanban Boards
       </a>
       <span class="navbar-text float-xs-right">
-        Not Logged In   
+        <% if current_user.nil? %>
+          <%= link_to 'login', '/login' %>
+            |
+          <%= link_to "register", new_user_path %>
+        <% else %>
+          <%= link_to "logout #{current_user.username}", '/logout' %>
+        <% end %>
       </span>
     </nav>    
     <div class="container">

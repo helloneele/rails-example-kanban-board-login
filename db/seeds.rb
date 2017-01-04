@@ -9,3 +9,6 @@ Card.create(title: 'Wichtigster Use Case', description: 'definiere den wichtigst
 
 b2 = Board.create(title: 'Weihnachten')
 Card.create(title: 'Geschenk für Mama', description: 'Recherche notwendig!', status: 'backlog', board_id: b2.id)
+
+User.create({username: 'mariam', password: 'badpassword123' })
+User.create({username: 'bjelline', password: 'geheim!' })
