@@ -59,12 +59,13 @@
     </div>
     <footer class="bd-footer text-muted">
       <div class="container">
-        <p>This Demo App uses the gem <kbd>devise</kbd> to implement Login. 
-          You have to specify your user-model so devise can add attributes to it.          
-          Devise comes with its own set of routes and controllers.  You can either
-          use devises views, or copy and change them.
+        <p>This Demo App uses the gem <kbd>devise</kbd> to implement Login. Devise
+          can handle registration, confirmation via e-mail, handling forgotten passwords
+          and much more for you. In this demo app you can 
+          <%= link_to "see all the e-mails",  letter_opener_web_path %>devise sends.</p>
 
-          Still using the rails session-cookie <kbd><%=
+
+          <p>For establishing a session we are still using the rails session-cookie <kbd><%=
         Rails.application.config.session_options[:key] %></kbd>.</p>
         <p>You can find the source code in branch
           <a href="https://github.com/backend-development/rails-example-kanban-board-login/tree/kanban-3">kanban-2</a> of <a href="https://github.com/backend-development/rails-example-kanban-board-login">the repository</a>.</p>
