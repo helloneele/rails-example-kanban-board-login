@@ -4,4 +4,6 @@ Rails.application.routes.draw do
     resources :cards
   end
   root 'boards#index'
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener"
 end
