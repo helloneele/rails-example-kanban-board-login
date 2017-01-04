@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170103223540) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "boards", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at", null: false
@@ -25,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170103223540) do
     t.integer  "board_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["board_id"], name: "index_cards_on_board_id"
+    t.index ["board_id"], name: "index_cards_on_board_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 20170103223540) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.index ["username"], name: "index_users_on_username", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
 end
