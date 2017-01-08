@@ -45,6 +45,9 @@
           </li>
         <% else %>
           <li class="nav-item">
+            log in with
+          </li>        
+          <li class="nav-item">
             <%= link_to "/auth/twitter", class: 'nav-link' do %>
               <%= image_tag "twitter.svg", size: "30x30", alt: 'login with twitter' %>
             <% end %>

@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   end
   root 'boards#index'
   get '/auth/:provider/callback', to: 'sessions#create'
+
+  match '/auth/:provider/callback', to: 'sessions#create',  via: [:get, :post]
+  match '/auth/failure',            to: 'sessions#failure', via: [:get, :post]  
 end
