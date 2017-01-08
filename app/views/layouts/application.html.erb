@@ -38,10 +38,24 @@
              href="https://kanban-4.herokuapp.com/">4: omniauth 
              <span class="sr-only">(current)</span></a>
         </li>
+        <% if current_user %> 
+          <li class="nav-item">
+            Logged in as <%= current_user.name %> 
+            <%= link_to "log out", logout_path %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "/auth/twitter", class: 'nav-link' do %>
+              <%= image_tag "twitter.svg", size: "30x30", alt: 'login with twitter' %>
+            <% end %>
+          </li>
+          <li class="nav-item">        
+            <%= link_to "/auth/facebook", class: 'nav-link' do %>
+              <%= image_tag "facebook.svg", size: "30x30", alt: 'login with facebook' %>
+            <% end %>
+          </li>
+        <% end %>
       </ul>
-      <span class="navbar-text float-xs-right">
-        not implemented yet
-      </span>
     </nav>    
     <div class="container">
       <% flash.each do |key, value| %>
@@ -52,7 +66,9 @@
     </div>
     <footer class="bd-footer text-muted">
       <div class="container">
-        <p>This Demo App offers Login with facebook through the gem omniauth.</p>
+        <p>This Demo App offers Login with facebook through the gem omniauth.
+          See <a href="https://backend-development.github.io/rails_authentication.html#omniauth">
+          backend-development.github.io</a> for a step by step explanation of the code.</p>
         <p>You can find the source code in <a href="https://github.com/backend-development/rails-example-kanban-board-login/tree/kanban-4">the kanban-4 branch</a> of <a href="https://github.com/backend-development/rails-example-kanban-board-login">the repository</a>.</p>
       </div>
     </footer>
