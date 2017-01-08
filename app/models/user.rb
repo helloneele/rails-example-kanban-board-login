@@ -7,4 +7,8 @@ class User < ApplicationRecord
       uid:      auth['uid']
     )
   end
+
+  def name
+    "#{uid}@#{provider}"
+  end
 end
