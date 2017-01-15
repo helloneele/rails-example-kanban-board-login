@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_or_create_with_omniauth(request.env['omniauth.auth'])
 
-    render text: "<pre>" + env["omniauth.auth"].to_yaml and return
+    # render text: "<pre>" + env["omniauth.auth"].to_yaml and return
 
     if user
       session[:user_id] = user.id
