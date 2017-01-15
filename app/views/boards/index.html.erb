@@ -8,9 +8,17 @@
       <h5 class="list-group-item-heading">
         <span class="tag tag-default tag-pill float-xs-right"><%= board.cards.length %></span>
         <%= link_to board.title, board_path( board )%></h5>
-      <p class="list-group-item-text">Last Modified <%= time_ago_in_words board.last_change %> ago.</p>
       <p class="list-group-item-text">
-        <%= link_to 'Edit Board Settings', edit_board_path(board) %>, 
+        <% if board.last_change %>
+          Last Modified <%= time_ago_in_words board.last_change %> ago.
+        <% else %>
+          Noch keine Änderungen!
+        <% end %>
+      </p>
+
+
+      <p class="list-group-item-text">
+        <%= link_to 'Edit Board Settings', edit_board_path(board) %>,
         <%= link_to 'Delete Board', board, method: :delete, data: { confirm: 'Are you sure?' } %>
       </p>
     </li>

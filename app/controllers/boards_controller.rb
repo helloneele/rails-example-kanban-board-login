@@ -49,7 +49,7 @@ class BoardsController < ApplicationController
         format.html { render :edit }
         format.json { render json: @board.errors, status: :unprocessable_entity }
       end
-    end
+    end 
   end
 
   # DELETE /boards/1

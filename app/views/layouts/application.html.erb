@@ -23,12 +23,12 @@
           Logged in as <%= current_user.name %>
           <%= link_to "log out", logout_path %>
         <% else %>
-          log in with <%= link_to "github", "/auth/github" %>
+          log in with <%= link_to "github", "/auth/github" %>   
         <% end %>
       </span>
     </nav>
     <div class="container">
-      <% flash.each do |key, value| %> 
+      <% flash.each do |key, value| %>
           <div class="alert alert-info mt-1"><strong><%= key %>:</strong> <%= value %></div>
       <% end %>
 
